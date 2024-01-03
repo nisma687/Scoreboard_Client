@@ -4,6 +4,8 @@ import img from "../../assets/img/4707071.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2';
+import useAxios, { axiosPublic } from "../../axios/useAxios";
+
 const Register = () => {
     const {createUser}=useContext(AuthContext);
     const {
@@ -18,13 +20,26 @@ const Register = () => {
         createUser(data.email,data.password)
         .then((result)=>{
             console.log(result.user);
-            Swal.fire({
-                icon: 'success',
-                title: 'Registered Successfully',
-                showConfirmButton: false,
-                timer: 1500
-              })
-            reset();
+            const info={
+                name:data.name,
+                email:data.email
+            }
+            axiosPublic.post("/addUser",info)
+            .then((res)=>{
+                console.log(res);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registered Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                reset();
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+
+            
         })
         .catch((error)=>{
             console.log(error);

@@ -1,10 +1,25 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2';
+import { axiosPublic } from "../../axios/useAxios";
+
 
 const Navbar = () => {
   const {user,logout}=useContext(AuthContext);
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    axiosPublic.get("/users")
+      .then((res) => {
+        const admin = res.data.filter((us) => us?.email === user?.email && us?.status === "admin");
+        const isAdmin = admin.length > 0 ? true : false;
+        setIsAdmin(isAdmin); // Set the value of isAdmin using useState
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      });
+  }, [user]);
+  // useAdmin();
   const handleLogOut=()=>{
     logout()
     .then(res=>{
@@ -26,10 +41,15 @@ const Navbar = () => {
       })
     })
   }
+
     const navlinks=<>
     <li><NavLink>Home</NavLink></li>
      {user?"":<li><NavLink to="/login">Login</NavLink></li>}
      {user?"":<li><NavLink to="/register">Register</NavLink></li>}
+     {isAdmin?<li><NavLink to="/dashboard">DashBoard</NavLink></li>:""}
+     
+     
+     
     
      
      
