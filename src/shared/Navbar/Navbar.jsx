@@ -46,8 +46,8 @@ const Navbar = () => {
     <li><NavLink>Home</NavLink></li>
      {user?"":<li><NavLink to="/login">Login</NavLink></li>}
      {user?"":<li><NavLink to="/register">Register</NavLink></li>}
-     {isAdmin?<li><NavLink to="/dashboard">DashBoard</NavLink></li>:""}
-     
+     {isAdmin?<li><NavLink to="/dashboard">Bawler</NavLink></li>:""}
+     {isAdmin?<li><NavLink to="/cricketer">Cricketer</NavLink></li>:""}
      
      
     

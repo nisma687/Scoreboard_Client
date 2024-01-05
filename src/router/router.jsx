@@ -8,6 +8,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import DashBoard from "../pages/DashBoard/DashBoard";
 
+import CricketerDashBoard from "../components/Cricketer/CricketerDashBoard";
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
         {
           path:"/dashboard",
           element:<DashBoard/>,
+        },
+        {
+          path:"/cricketer",
+          element:<CricketerDashBoard/>,
         }
       ]
     },
