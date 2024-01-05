@@ -66,6 +66,7 @@ const Cricketer = () => {
         console.log(res.data);
         alert("Score Updated Successfully");
         reset();
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);

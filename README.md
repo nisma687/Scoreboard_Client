@@ -1,8 +1,12 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Simple Cricket ScoreBoard
 
-Currently, two official plugins are available:
+this website is simple cricket scoreboard which shows the current match and the score of bawlers and bathsmans.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- React toolkit,Tailwind CSS,MongoDb,Express js,Marquee,Flowbite,Daisy Ui were used
+- 2 types of user are there.Admin and User.
+- user is Allowed to see only the homepage
+- admin can update and add the bawler and batsman.
+

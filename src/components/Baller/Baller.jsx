@@ -113,8 +113,8 @@ const Baller = () => {
 
     
 
-    const bowlerData = {bowler,run,wicket,noball,wide};
-    console.log(bowlerData);
+    // const bowlerData = { name: bowler, run: run, over: 0.1, wicket: Wicket, maiden: maiden, noball: noball, wide: Wide};
+    // console.log(bowlerData);
     // axiosPublic.post("/bawler",bowlerData)
     // .then((res)=>{
     //     console.log(res);
@@ -172,7 +172,7 @@ const Baller = () => {
           <Label htmlFor="run" value="Given Run" />
         </div>
         <TextInput id="run" 
-        {...register("run", { required: true })}
+        {...register("run", { required: false })}
         type="text" />
       </div>
       <div className="flex items-center gap-2">
