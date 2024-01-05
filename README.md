@@ -9,4 +9,5 @@ this website is simple cricket scoreboard which shows the current match and the 
 - 2 types of user are there.Admin and User.
 - user is Allowed to see only the homepage
 - admin can update and add the bawler and batsman.
+- admin email : boruto@gmail.com   password: Boruto1234
 
